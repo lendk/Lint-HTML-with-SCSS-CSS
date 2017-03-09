@@ -1,6 +1,6 @@
 {
   "name": "lint-html-with-scss-css",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "You can use this sass/css file to lint your html for broken links, bad attributes or any other development lazyness",
   "main": "index.js",
   "scripts": {
