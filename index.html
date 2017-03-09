@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="debug">
+<head>
+<title>Lint Example</title>
+<meta charset="">
+<style>
+html{overflow-y:scroll;} /* Forces a scrollbar when the viewport is larger than the websites content - CSS3 */
+
+body{margin:0; padding:0; font-size:13px; font-family:Georgia, "Times New Roman", Times, serif; color:#919191; background-color:#232323;}
+
+.clear:after{content:"."; display:block; height:0; clear:both; visibility:hidden; line-height:0;}
+.clear{display:block; clear:both;}
+html[xmlns] .clear{display:block;}
+* html .clear{height:1%;}
+
+a{outline:none; text-decoration:none;}
+
+code{font-weight:normal; font-style:normal; font-family:Georgia, "Times New Roman", Times, serif;}
+
+.fl_left{float:left;}
+.fl_right{float:right;}
+
+img{margin:0; padding:0; border:none; line-height:normal; vertical-align:middle;}
+.imgholder, .imgl, .imgr{padding:4px; border:1px solid #D6D6D6; text-align:center;}
+.imgl{float:left; margin:0 15px 15px 0; clear:left;}
+.imgr{float:right; margin:0 0 15px 15px; clear:right;}
+
+/*----------------------------------------------HTML 5 Overrides-------------------------------------*/
+
+address, article, aside, figcaption, figure, footer, header, nav, section{display:block; margin:0; padding:0;}
+
+q{display:block; padding:0 10px 8px 10px; color:#979797; background-color:#ECECEC; font-style:italic; line-height:normal;}
+q:before{content:'“ '; font-size:26px;}
+q:after{content:' „'; font-size:26px; line-height:0;}
+
+/* ----------------------------------------------Wrapper-------------------------------------*/
+
+div.wrapper{display:block; width:100%; margin:0; padding:0; text-align:left;}
+
+.row1, .row1 a{color:#C0BAB6; background-color:#333333;}
+.row2{color:#979797; background-color:#FFFFFF;}
+.row2 a{color:#FF9900; background-color:#FFFFFF;}
+.row3, .row3 a{color:#919191; background-color:#232323;}
+
+/*----------------------------------------------Generalise-------------------------------------*/
+
+#header, #container, #footer{display:block; width:960px; margin:0 auto;}
+
+nav ul{margin:0; padding:0; list-style:none;}
+
+h1, h2, h3, h4, h5, h6{margin:0; padding:0; font-size:16px; font-weight:bold; font-style:normal; line-height:normal; text-transform:uppercase;}
+
+address{font-style:normal;}
+
+blockquote, q{display:block; padding:8px 10px; color:#979797; background-color:#ECECEC; font-style:italic; line-height:normal;}
+blockquote:before, q:before{content:'“ '; font-size:26px;}
+blockquote:after, q:after{content:' „'; font-size:26px; line-height:0;}
+
+form, fieldset, legend{margin:0; padding:0; border:none;}
+legend{display:none;}
+input, textarea, select{font-size:12px; font-family:Georgia,"Times New Roman",Times,serif;}
+
+.one_quarter, .two_quarter, .three_quarter, .four_quarter{display:block; float:left; margin:0 20px 0 0;}
+.one_quarter{width:225px;}
+.two_quarter{width:470px;}
+.three_quarter{width:715px;}
+.four_quarter{width:960px; float:none; margin-right:0; clear:both;}
+.lastbox{margin-right:0;}
+
+/*----------------------------------------------Header-------------------------------------*/
+
+#header{padding:20px 0;}
+
+#header #hgroup{float:left; margin:0 0 20px 0;}
+#header #hgroup h1, #header #hgroup h2{font-weight:normal; text-transform:none;}
+#header #hgroup h1{font-size:36px;}
+#header #hgroup h2{font-size:13px;}
+
+#header nav{display:block; float:right; margin:10px 0 0 0; padding:20px 0; color:#C0BAB6; background-color:#232323;}
+#header nav ul{padding:0 20px;}
+#header nav li{display:inline; margin-right:25px; text-transform:uppercase;}
+#header nav li.last{margin-right:0;}
+#header nav li a{color:#C0BAB6; background-color:#232323;}
+#header nav li a:hover{color:#FF9900; background-color:#232323;}
+
+/*----------------------------------------------Content Area-------------------------------------*/
+
+#container{padding:30px 0;}
+#container section{display:block; width:100%; margin:0 0 30px 0; padding:0;}
+#container .last{margin:0;}
+#container .more{text-align:right;}
+
+/* ------Homepage-----*/
+
+#container #homepage{display:block; width:100%; line-height:1.6em;}
+
+#container #homepage #latest{}
+#container #homepage #latest article{}
+#container #homepage #latest figure{padding:4px; border:1px solid #D6D6D6; text-align:center;}
+#container #homepage #latest figcaption{padding:5px; text-align:center; color:#979797; background-color:#EEEEEE; text-transform:uppercase; text-align:center;}
+
+/* ------Shout-----*/
+
+#container #shout{padding:0 0 20px 0; border-bottom:1px solid #DEDEDE; text-align:center;}
+#container #shout p{font-size:20px; margin:0; padding:0; line-height:1.8em;}
+
+/* ------Main Content-----*/
+
+#container #content{float:left; width:630px; line-height:1.6em;}
+
+#container #content #services{}
+#container #content #services ul{margin:0; padding:0; list-style:none;}
+#container #content #services ul li{display:block; width:100%; margin-bottom:30px;}
+#container #content #services ul li.last{ margin-bottom:0;}
+#container #content #services ul li article{}
+#container #content #services ul li article figure{}
+#container #content #services ul li article figure img{float:left; width:180px; height:150px; margin:0; padding:4px; border:1px solid #666666;}
+#container #content #services ul li article figure figcaption{display:block; float:right; width:410px;}
+#container #content #services ul li article figure h2{font-size:14px;}
+#container #content #services ul li article figure footer{}
+
+/* ------Right Column-----*/
+
+#container #right_column{float:right; width:280px;}
+#container #right_column h2.title{margin-bottom:15px; padding-bottom:15px; border-bottom:1px solid #DEDEDE;}
+
+#container #right_column nav{display:block; width:100%;}
+#container #right_column nav ul{margin:0; padding:0; list-style:none;}
+#container #right_column nav li{margin:0 0 3px 0; padding:0;}
+#container #right_column nav li.last{margin-bottom:0;}
+#container #right_column nav a{display:block; margin:0; padding:5px 10px 5px 20px; color:#666666; background:url("../images/orange_file.gif") no-repeat 10px center #FFFFFF; text-decoration:none; border-bottom:1px dotted #666666;}
+#container #right_column nav a:hover{color:#FF9900; background-color:#FFFFFF;}
+
+/*----------------------------------------------Footer-------------------------------------*/
+
+#footer{padding:20px 0;}
+#footer p{margin:0; padding:0;}
+</style>
+<link rel="stylesheet" href="dist/lint.min.css">
+</head>
+<body>
+<div class="wrapper row1">
+  <header id="header" class="clear">
+    <div id="hgroup">
+      <h1><a href="#">Html Lint example</a></h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Text Link</a></li>
+        <li><a href="#">Text Link</a></li>
+        <li><a href="#">Text Link</a></li>
+        <li><a href="#">Text Link</a></li>
+        <li class="last"><a href="#">Text Link</a></li>
+      </ul>
+    </nav>
+  </header>
+</div>
+<!-- content -->
+<div class="wrapper row2">
+  <div id="container" class="clear">
+    <!-- content body -->
+    <div id="homepage">
+      <!-- One Quarter -->
+      <section id="latest" class="clear">
+        <article class="one_quarter">
+          <figure><img src="images/demo/215x315.gif" width="215" height="315" alt="">
+            <figcaption>Image Caption Here</figcaption>
+          </figure>
+        </article>
+        <article class="one_quarter">
+          <figure><img src="images/demo/215x315.gif" width="215" height="315" alt="">
+            <figcaption>Image Caption Here</figcaption>
+          </figure>
+        </article>
+        <article class="one_quarter">
+          <figure><img src="images/demo/215x315.gif" width="215" height="315" alt="">
+            <figcaption>Image Caption Here</figcaption>
+          </figure>
+        </article>
+        <article class="one_quarter lastbox">
+          <figure><img src="images/demo/215x315.gif" width="215" height="315" alt="">
+            <figcaption>Image Caption Here</figcaption>
+          </figure>
+        </article>
+      </section>
+      <!-- / One Quarter -->
+      <section id="shout">
+        <p>Vestibulumaccumsan egestibulum eu justo convallis augue estas aenean elit intesque sed. Facilispede estibulum nulla orna nisl velit elit ac aliquat non tincidunt. Namjusto cras urna urnaretra lor urna neque sed quis orci nulla laoremut vitae doloreet condimentumst.</p>
+      </section>
+    </div>
+    <!-- main content -->
+    <div id="content">
+      <section id="services" class="last clear">
+        <ul>
+          <li>
+            <article class="clear">
+              <figure><img src="images/demo/180x150.gif" alt="">
+                <figcaption>
+                  <h2>Indonectetus facilis leo nibh</h2>
+                  <p>This is a W3C compliant free website template from <a href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a>. For full terms of use of this template please read our <a href="http://www.os-templates.com/template-terms">website template licence</a>.</p>
+                  <footer class="more"><a href="#">Read More &raquo;</a></footer>
+                </figcaption>
+              </figure>
+            </article>
+          </li>
+          <li class="last">
+            <article class="clear">
+              <figure><img src="images/demo/180x150.gif" alt="">
+                <figcaption>
+                  <h2>Indonectetus facilis leo nibh</h2>
+                  <p>You can use and modify the template for both personal and commercial use. You must keep all copyright information and credit links in the template and associated files. For more HTML5 templates visit <a href="http://www.os-templates.com/">free website templates</a>.</p>
+                  <footer class="more"><a href="#">Read More &raquo;</a></footer>
+                </figcaption>
+              </figure>
+            </article>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <!-- right column -->
+    <aside id="right_column">
+      <h2 class="title">Categories</h2>
+      <nav>
+        <ul>
+          <li><a href="#">Free Website Templates</a></li>
+          <li><a href="#">Free CSS Templates</a></li>
+          <li><a href="#">Free XHTML Templates</a></li>
+          <li><a href="#">Free Web Templates</a></li>
+          <li><a href="#">Free Website Layouts</a></li>
+          <li><a href="#">Free HTML 5 Templates</a></li>
+          <li><a href="#">Free Webdesign Templates</a></li>
+          <li><a href="#">Free FireWorks Templates</a></li>
+          <li><a href="#">Free PNG Templates</a></li>
+          <li class="last"><a href="#">Free Website Themes</a></li>
+        </ul>
+      </nav>
+      <!-- /nav -->
+    </aside>
+    <!-- / content body -->
+  </div>
+</div>
+<!-- Footer -->
+<div class="wrapper row3">
+  <footer id="footer" class="clear">
+    <p class="fl_left">Copyright &copy; 2012 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <p class="fl_right">Template by <a href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+  </footer>
+</div>
+</body>
+</html>

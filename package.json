@@ -1,0 +1,38 @@
+{
+  "name": "lint-html-with-scss-css",
+  "version": "1.0.0",
+  "description": "You can use this sass/css file to lint your html for broken links, bad attributes or any other development lazyness",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lendk/Lint-HTML-with-SCSS-CSS.git"
+  },
+  "keywords": [
+    "lint",
+    "html",
+    "scss",
+    "css"
+  ],
+  "author": "Lend Kelmendi",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.18.5",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.0.0",
+    "gulp-sourcemaps": "^1.9.1",
+    "gulp-util": "^3.0.7"
+  },
+  "bugs": {
+    "url": "https://github.com/lendk/Lint-HTML-with-SCSS-CSS/issues"
+  },
+  "homepage": "https://github.com/lendk/Lint-HTML-with-SCSS-CSS#readme"
+}

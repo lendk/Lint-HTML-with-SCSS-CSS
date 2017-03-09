@@ -1,0 +1,60 @@
+.debug *[style] {
+  border: 5px solid #f00;
+}
+
+.debug a:not([href]),
+.debug a[href="#"],
+.debug a[href=""],
+.debug a[href*="javascript:void(0)"] {
+  border: 5px solid #00f;
+}
+
+.debug img:not([alt]),
+.debug img[alt=""] {
+  border: 5px solid #ffa500;
+}
+
+.debug:not([lang]), .debug[lang=""] {
+  border: 5px solid #ff7f50;
+}
+
+.debug meta[charset]:not([charset="UTF-8"]) {
+  border: 5px solid #dc143c;
+}
+
+.debug meta[charset="UTF-8"]:not(:first-child) {
+  border: 5px solid #dc143c;
+}
+
+.debug meta[name="viewport"][content*="user-scalable=no"],
+.debug meta[name="viewport"][content*="maximum-scale"],
+.debug meta[name="viewport"][content*="minimum-scale"] {
+  border: 5px solid #f0f;
+}
+
+.debug input:not([id]),
+.debug select:not([id]),
+.debug textarea:not([id]) {
+  border: 5px solid #da70d6;
+}
+
+.debug label:not([for]) {
+  border: 5px solid #da70d6;
+}
+
+.debug input:not([name]),
+.debug select:not([name]),
+.debug textarea:not([name]),
+.debug form:not([name]):not([id]) {
+  border: 5px solid #800080;
+}
+
+.debug button:empty,
+.debug a:empty {
+  border: 5px solid #6495ed;
+}
+
+.debug script[type="text/javascript"],
+.debug link[rel="stylesheet"][type="text/css"] {
+  border: 5px solid #008080;
+}
